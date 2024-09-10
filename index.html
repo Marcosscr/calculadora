@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Bungee+Spice&family=Roboto+Condensed&display=swap"
+  rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <title>CALCULADORA</title>
+</head>
+
+<body>
+
+
+ <div class="container">
+
+  <input class="display">
+  <button class="clean" onclick="limpaTela()"> AC </button>
+  <button class="blue-button" onclick="inverter()"> +/- </button>
+  <button class="blue-button" onclick="adicionarCaracter('/')"> / </button>
+  <button class="blue-button" onclick="adicionarCaracter('*')"> * </button>
+  <button class="number" onclick="adicionarCaracter('7')"> 7 </button>
+  <button class="number" onclick="adicionarCaracter('8')"> 8 </button>
+  <button class="number" onclick="adicionarCaracter('9')"> 9 </button>
+  <button class="blue-button" onclick="adicionarCaracter('-')"> - </button>
+  <button class="number" onclick="adicionarCaracter('4')"> 4 </button>
+  <button class="number" onclick="adicionarCaracter('5')"> 5 </button>
+  <button class="number" onclick="adicionarCaracter('6')"> 6 </button>
+  <button class="blue-button" id="soma" onclick="adicionarCaracter('+')"> + </button>
+  <button class="number" onclick="adicionarCaracter('1')"> 1 </button>
+  <button class="number" onclick="adicionarCaracter('2')"> 2 </button>
+  <button class="number" onclick="adicionarCaracter('3')"> 3 </button>
+  <button class="equal" onclick="equal('resultado')"> = </button>
+  <button class="number-zero" onclick="adicionarCaracter('0')"> 0 </button>
+  <button class="ponto" onclick="adicionarCaracter('.')"> . </button>
+
+ </div>
+
+ <script>
+
+  function adicionarCaracter(caracter) {
+   const valorDisplay = document.querySelector(".display").value
+   document.querySelector(".display").value = valorDisplay + caracter
+
+  }
+  function limpaTela() {
+   document.querySelector(".display").value = ""
+  }
+  function equal() {
+   const resultado = document.querySelector(".display").value
+   document.querySelector(".display").value = eval(resultado)
+  }
+  function inverter() {
+   const inverter = document.querySelector(".display").value
+   document.querySelector(".display").value = inverter * -1
+
+  }
+
+
+ </script>
+ <br>
+ <br>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
